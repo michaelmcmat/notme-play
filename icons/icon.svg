@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Значок NotMe: золотое кольцо портала призыва на тёмном фоне, без текста. Рисунок наш.
+     Растровые значки (icon-192.png, icon-512.png, icon-maskable-512.png, apple-touch-icon.png) сняты с этого файла:
+     чтобы перерисовать, поправь рисунок здесь и сними PNG заново (см. «Значок» в game/README.md).
+     Сам портал лежит в группе #art; для значка maskable её сжимают к центру, чтобы он остался внутри круга
+     безопасной зоны (радиус 40 % стороны). Фон со звёздами стоит вне группы и занимает всю площадь. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="48%" r="72%">
+      <stop offset="0" stop-color="#2d241a"/>
+      <stop offset="0.62" stop-color="#15130f"/>
+      <stop offset="1" stop-color="#0d0c0a"/>
+    </radialGradient>
+    <!-- свет портала: белое ядро, сирень, фиолет, тёмный край (как круг на сцене призыва) -->
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.14" stop-color="#ffffff"/>
+      <stop offset="0.34" stop-color="#d6b8ff"/>
+      <stop offset="0.66" stop-color="#9a5fd6"/>
+      <stop offset="0.9" stop-color="#4b2a7a"/>
+      <stop offset="1" stop-color="#34205a"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#ffe29a"/>
+      <stop offset="0.45" stop-color="#d8a24a"/>
+      <stop offset="1" stop-color="#9c6a22"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- звёзды по углам: все дальше 230 от центра, чтобы кольцо их не закрывало -->
+  <g fill="#fff8e0">
+    <circle cx="448" cy="70" r="5"/>
+    <circle cx="66" cy="446" r="4.5"/>
+    <circle cx="150" cy="40" r="3" fill="#ffe9a8"/>
+    <circle cx="372" cy="480" r="3" fill="#ffe9a8"/>
+    <circle cx="256" cy="22" r="3"/>
+    <circle cx="256" cy="490" r="3"/>
+  </g>
+  <path d="M82 68Q82 86 100 86Q82 86 82 104Q82 86 64 86Q82 86 82 68Z" fill="#ffe9a8" stroke="#ffe9a8" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M432 414Q432 428 446 428Q432 428 432 442Q432 428 418 428Q432 428 432 414Z" fill="#fff8e0" stroke="#fff8e0" stroke-width="5" stroke-linejoin="round"/>
+
+  <g id="art">
+    <!-- свечение вокруг портала -->
+    <circle cx="256" cy="256" r="198" fill="#9a5fd6" opacity="0.5" filter="url(#glow)"/>
+
+    <!-- диск портала: свет к центру -->
+    <circle cx="256" cy="256" r="180" fill="url(#core)"/>
+    <circle cx="256" cy="256" r="60" fill="#ffffff" opacity="0.55" filter="url(#soft)"/>
+
+    <!-- вращающиеся кольца: у каждого две дуги, белая и золотая, как на сцене призыва -->
+    <g fill="none" stroke-linecap="round" stroke-width="15">
+      <path d="M 150.3 195.0 A 122 122 0 0 1 313.3 148.3" stroke="#ffffff" opacity="0.95"/>
+      <path d="M 334.4 162.5 A 122 122 0 0 1 352.1 331.1" stroke="#ffe07a"/>
+      <path d="M 326.6 293.6 A 80 80 0 0 1 218.4 326.6" stroke="#ffffff" opacity="0.95" stroke-width="13"/>
+      <path d="M 204.6 317.3 A 80 80 0 0 1 193.0 206.7" stroke="#ffe07a" stroke-width="13"/>
+    </g>
+
+    <!-- золотое кольцо: тёмный контур снаружи и внутри, свет по верхней кромке -->
+    <circle cx="256" cy="256" r="196" fill="none" stroke="#2b1d2a" stroke-width="46"/>
+    <circle cx="256" cy="256" r="196" fill="none" stroke="url(#gold)" stroke-width="34"/>
+    <circle cx="256" cy="256" r="205" fill="none" stroke="#fff3c4" stroke-width="5" opacity="0.7" stroke-dasharray="260 1010" transform="rotate(-150 256 256)"/>
+  </g>
+</svg>
