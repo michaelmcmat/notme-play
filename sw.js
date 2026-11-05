@@ -1,10 +1,10 @@
 // NotMe: офлайн-кэш игры. Файл собрал scripts/make-sw.mjs, руками его не правят.
 
-const CACHE = "notme-0.10.0-4ba068bb99"
+const CACHE = "notme-0.18.0-70cba34346"
 // все файлы сборки; пути от папки, где лежит этот файл
 const FILES = [
-  "assets/index-CXR4mXw-.css",
-  "assets/index-im0KcYRS.js",
+  "assets/index-ChxZnuMK.js",
+  "assets/index-DU0-u-_h.css",
   "icons/apple-touch-icon.png",
   "icons/icon-192.png",
   "icons/icon-512.png",
